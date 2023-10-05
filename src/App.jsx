@@ -40,7 +40,7 @@ function App() {
         </Route>
         {isAuthenticated && role === "admin" ? (
           <Route path="/" element={<AdminLayout />}>
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="Dashboard" element={<Dashboard />} />
             <Route path="categories" element={<CategoriesPage />} />
             <Route path="users" element={<UsersPage />} />
           </Route>
