@@ -3,7 +3,7 @@
 
 
 import "./dashboard.scss"
-const Dashboard = () => {
+const DashboardPage = () => {
   return (
     <div className="container"><div className="dashboard">
       <h1>Najot Talim</h1>
@@ -13,4 +13,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default DashboardPage;

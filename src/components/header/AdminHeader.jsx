@@ -77,7 +77,7 @@ const AdminHeader = () => {
         <button onClick={closeToggle} className="close">
           ✖️
         </button>
-        <NavLink to="/Dashboard">Dashboard</NavLink>
+        <NavLink to="/dashboard">Dashboard</NavLink>
         <NavLink to="/categories">category</NavLink>
         <NavLink to="/users">users</NavLink>
         <div className="header__navbar__open__login__toggle">

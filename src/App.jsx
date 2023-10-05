@@ -1,5 +1,5 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import FrondLayout from "./components/layout/frond"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import FrondLayout from "./components/layout/frond";
 import HomePage from "./pages/public/Home/HomePage";
 import CategoryPage from "./pages/public/Category/CategoryPage";
 import BlogPage from "./pages/public/Blog/BlogPage";
@@ -9,17 +9,16 @@ import LoginPage from "./pages/public/Login/LoginPage";
 import { useContext } from "react";
 import AccountPage from "./pages/common/Account/AccountPage";
 import MyBlogs from "./pages/common/Myblogs/MyBlogs";
-import Dashboard from "./pages/admin/Dashboard/Dashboard";
 import CategoriesPage from "./pages/admin/Categories/CategoriesPage";
 import UsersPage from "./pages/admin/users/UsersPage";
 import NotFound from "./pages/public/NotFound/NotFound";
 import AdminLayout from "./components/layout/admin";
 import { AuthContext } from "./context/AuthContext";
 import BlogsPage from "./pages/public/Blogs/BlogsPage";
-
+import DashboardPage from "./pages/admin/Dashboard/Dashboard";
 
 function App() {
- const { isAuthenticated, role } = useContext(AuthContext);
+  const { isAuthenticated, role } = useContext(AuthContext);
   return (
     <BrowserRouter>
       <Routes>
@@ -40,7 +39,7 @@ function App() {
         </Route>
         {isAuthenticated && role === "admin" ? (
           <Route path="/" element={<AdminLayout />}>
-            <Route path="Dashboard" element={<Dashboard />} />
+            <Route path="dashboard" element={<DashboardPage />} />
             <Route path="categories" element={<CategoriesPage />} />
             <Route path="users" element={<UsersPage />} />
           </Route>
@@ -51,4 +50,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

@@ -3,7 +3,7 @@ import { Fragment, useContext, useEffect, useState } from "react";
 import request from "../../../server";
 import Cookies from "js-cookie";
 import { Tabs, message } from "antd";
-import { TOKEN } from "../../../constants";
+import { ROLE, TOKEN } from "../../../constants";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import BtnLoading from "../../../components/btnLoading/BtnLoading";
@@ -27,6 +27,7 @@ const AccountPage = () => {
   const logout = () => {
     setIsAuthenticated(false);
     Cookies.remove(TOKEN);
+    Cookies.remove(ROLE);
     navigate("/");
   };
   async function getInput() {
