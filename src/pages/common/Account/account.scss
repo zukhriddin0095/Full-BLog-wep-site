@@ -1,0 +1,206 @@
+.account {
+  margin-top: 180px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  &__wrapper {
+    padding-top: 69px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    h1 {
+      margin-bottom: 68px;
+      color: #232536;
+      text-align: center;
+      font-family: Sen;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 64px;
+      letter-spacing: -2px;
+    }
+    &__form {
+      width: 100%;
+      margin-bottom: 174px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 50px;
+
+      &__firstname {
+        input {
+          width: 769px;
+          border-radius: 10px;
+          border: 1px solid rgba(109, 110, 118, 0.5);
+          padding: 10px;
+          color: var(--Black, #232536);
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+          @media (max-width: 850px){
+            width: 100%;
+          }
+        }
+      }
+      &__lastname {
+        input {
+          width: 769px;
+          border-radius: 10px;
+          border: 1px solid rgba(109, 110, 118, 0.5);
+          padding: 10px;
+          color: var(--Black, #232536);
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+          @media (max-width: 850px){
+            width: 100%;
+          }
+        }
+      }
+      &__username {
+        input {
+          width: 769px;
+          border-radius: 10px;
+          border: 1px solid rgba(109, 110, 118, 0.5);
+          padding: 10px;
+          color: var(--Black, #232536);
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+          @media (max-width: 850px){
+            width: 100%;
+          }
+        }
+      }
+      &__password {
+        input {
+          width: 769px;
+          border-radius: 10px;
+          border: 1px solid rgba(109, 110, 118, 0.5);
+          padding: 10px;
+          color: var(--Black, #232536);
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+          @media (max-width: 850px){
+            width: 100%;
+          }
+        }
+      }
+      &__submit { 
+        button {
+          width: 500px;
+          padding: 16px 0;
+          background: var(--Yellow, #b0a586);
+          color: var(--Black, #232536);
+          font-family: Sen;
+          text-align: center;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 32px;
+          cursor: pointer;
+          border: none;
+          @media (max-width: 850px){
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.account__wrapper__form__password__current {
+  label {
+    padding: 10px;
+    color: var(--Black, #232536);
+    font-family: Sen;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    cursor: pointer;
+    border: none;
+  }
+  input {
+    border-radius: 10px;
+    border: 1px solid rgba(109, 110, 118, 0.5);
+    padding: 10px;
+    width: 100%;
+    color: var(--Black, #232536);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 175% */
+  }
+}
+
+.passwords {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.account__wrapper__form__password__new {
+  label {
+    color: var(--Black, #232536);
+    font-family: Sen;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    cursor: pointer;
+    border: none;
+  }
+  input {
+    border-radius: 10px;
+    border: 1px solid rgba(109, 110, 118, 0.5);
+    padding: 10px;
+    width: 100%;
+    color: var(--Black, #232536);
+
+    /* Body 1 */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 175% */
+  }
+}
+.btn {
+  text-align: center;
+  button {
+    width: 50%;
+    padding: 10px 20px;
+    background: var(--Yellow, #ffd050);
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+  }
+}
+
+.Logout {
+  position: absolute;
+  top: 90px;
+  right: 30px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.logout {
+  border: none;
+  background: transparent;
+  i {
+    font-size: 30px;
+    color: #000;
+  }
+}

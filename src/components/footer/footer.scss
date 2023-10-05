@@ -1,0 +1,38 @@
+
+.footer {
+  background: var(--Black, #232536);
+  &__wrapper {
+    padding: 54px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__title {
+      h5 {
+        color: var(--Light, #ffffff70);
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+      }
+    }
+    &__social {
+      display: flex;
+      gap: 27px;
+      a {
+        font-size: 25px;
+        transition: 0.3s;
+        &:hover {
+          transform: scale(1.5) rotate(360deg);
+          color: #2ca314;
+        }
+        i {
+          color: #ffffff70;
+          &:hover {
+            color: #2ca314;
+          }
+        }
+      }
+    }
+  }
+}
