@@ -54,7 +54,7 @@ const AdminHeader = () => {
             </Link>
           </div>
           <div className="header__navbar__link">
-            <NavLink to="/Dashboard">Dashboard</NavLink>
+            <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/categories">category</NavLink>
             <NavLink to="/users">users</NavLink>
           </div>
