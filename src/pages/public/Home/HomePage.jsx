@@ -3,15 +3,19 @@ import request from "../../../server";
 import { message } from "antd";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
-import { Navigation } from "swiper/modules";  
+import { FreeMode, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Loading from "../../../components/loading/Loading";
+import "swiper/css";
+
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
 
 import "./home.scss";
 import { ENDPOINT } from "../../../constants";
 const HomePage = () => {
   const [data, setData] = useState([]);
-  const [popular, setPopular] = useState([])
+  const [popular, setPopular] = useState([]);
   const [category, setCategory] = useState([]);
   const [time, setTime] = useState("");
   const [loading, setLoading] = useState(false);
@@ -112,28 +116,39 @@ const HomePage = () => {
             <h1>Popular blogs</h1>
           </div>
           <Swiper
-            spaceBetween={50}
-            slidesPerView={3}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
+            loop
+            modules={[FreeMode, Autoplay]}
+            spaceBetween={10}
+            slidesPerView={3.5}
+            freeMode={true}
+            autoplay={{
+              delay: 1000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
             breakpoints={{
               350: {
-                width: 370,
+                width: 450,
                 slidesPerView: 1,
               },
-              576: {
+              450: {
                 width: 576,
-                slidesPerView: 2,
+                slidesPerView: 1.5,
+              },
+              576: {
+                width: 950,
+                slidesPerView: 2.5,
               },
               950: {
-                width: 576,
+                width: 1280,
                 slidesPerView: 3,
               },
               1280: {
-                width: 1300,
-                slidesPerView: 3,
+                width: 1340,
+                slidesPerView: 3.5,
               },
             }}
+            className="mySwiper"
           >
             {popular.map((el, i) => {
               return (
@@ -142,6 +157,7 @@ const HomePage = () => {
                     <Loading />
                   ) : (
                     <div
+                      style={{ height: "100%", width: "100%" }}
                       onClick={() => navigate(`blogs/${el._id}`)}
                       className="cards__card"
                     >
@@ -150,6 +166,7 @@ const HomePage = () => {
                           effect="blur"
                           style={{
                             width: "100%",
+                            height: "350px",
                             borderTopLeftRadius: "20px",
                             borderTopRightRadius: "20px",
                           }}
@@ -185,30 +202,39 @@ const HomePage = () => {
           </div>
 
           <Swiper
-            // install Swiper modules
-            modules={[Navigation]}
-            spaceBetween={50}
-            slidesPerView={3}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
+            loop
+            modules={[FreeMode, Autoplay]}
+            spaceBetween={10}
+            slidesPerView={3.5}
+            freeMode={true}
+            autoplay={{
+              delay: 1000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
             breakpoints={{
               350: {
-                width: 370,
+                width: 450,
                 slidesPerView: 1,
               },
-              576: {
+              450: {
                 width: 576,
-                slidesPerView: 2,
+                slidesPerView: 1.5,
+              },
+              576: {
+                width: 950,
+                slidesPerView: 2.5,
               },
               950: {
-                width: 576,
+                width: 1280,
                 slidesPerView: 3,
               },
               1280: {
-                width: 1300,
-                slidesPerView: 3,
+                width: 1340,
+                slidesPerView: 3.5,
               },
             }}
+            className="mySwiper"
           >
             {loading ? (
               <Loading />
@@ -221,7 +247,11 @@ const HomePage = () => {
                       className="card"
                     >
                       <LazyLoadImage
-                        style={{ width: "48px", height: "48px", borderRadius: "10px" }}
+                        style={{
+                          width: "48px",
+                          height: "48px",
+                          borderRadius: "10px",
+                        }}
                         effect="blur"
                         src={`${ENDPOINT}upload/${el.photo._id}.${
                           el.photo.name.split(".")[1]

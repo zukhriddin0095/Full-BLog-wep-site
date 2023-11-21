@@ -77,7 +77,7 @@ const BlogsPage = () => {
             />
           </div>
           <h1>All Posts ({totalPost})</h1>
-          <div className="allposts__cards">
+          <div className="allposts__cards ">
             {loading ? (
               <Loading />
             ) : (
@@ -93,7 +93,7 @@ const BlogsPage = () => {
                     ;
                     <div className="allposts__cards__card__title">
                       <h5>{el.title}</h5>
-                      <h3>{el.description}</h3>
+                      <h3  >{el.description}</h3>
                       <p>{el.category?.description}</p>
                     </div>
                     ;
